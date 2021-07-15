@@ -58,82 +58,65 @@ class RxList<T> extends ChangeNotifier with ListMixin<T> {
 
   void replaceRange(int start, int end, Iterable<T> replacement) {
     _list.replaceRange(start, end, replacement);
-    notifyListeners();
   }
 
   void setRange(int start, int end, Iterable<T> iterable, [int skipCount = 0]) {
     _list.setRange(start, end, iterable, skipCount);
-    notifyListeners();
   }
 
   void fillRange(int start, int end, [T? fillValue]) {
     _list.fillRange(start, end, fillValue);
-    notifyListeners();
   }
 
   void add(T item) {
     _list.add(item);
-    notifyListeners();
   }
 
   void addAll(Iterable<T> list) {
     _list.addAll(list);
-    notifyListeners();
   }
 
   bool remove(covariant T value) {
     final removed = _list.remove(value);
-    if (removed) {
-      notifyListeners();
-    }
     return removed;
   }
 
   T removeAt(int index) {
     final removed = _list.removeAt(index);
-    notifyListeners();
     return removed;
   }
 
   T removeLast() {
     final removed = _list.removeLast();
-    notifyListeners();
     return removed;
   }
 
   void removeRange(int start, int end) {
     _list.removeRange(start, end);
-    notifyListeners();
   }
 
   void removeWhere(bool Function(T) test) {
     _list.removeWhere(test);
-    notifyListeners();
   }
 
   void insert(int index, T element) {
     _list.insert(index, element);
-    notifyListeners();
   }
 
   void insertAll(int index, Iterable<T> iterable) {
     _list.insertAll(index, iterable);
-    notifyListeners();
   }
 
   void setAll(int index, Iterable<T> iterable) {
     _list.setAll(index, iterable);
-    notifyListeners();
   }
 
   void shuffle([Random? random]) {
     _list.shuffle(random);
-    notifyListeners();
   }
 
   void sort([int Function(T, T)? compare]) {
     _list.sort(compare);
-    notifyListeners();
   }
 
   List<T> sublist(int start, [int? end]) {
@@ -163,7 +146,6 @@ class RxList<T> extends ChangeNotifier with ListMixin<T> {
 
   void clear() {
     _list.clear();
-    notifyListeners();
   }
 
   static RxList<T> of<T>(List<T> list) => RxList<T>(list);
@@ -184,12 +166,10 @@ class RxList<T> extends ChangeNotifier with ListMixin<T> {
   @override
   void operator []=(int index, T value) {
     _list[index] = value;
-    notifyListeners();
   }
 
   @override
   set length(int value) {
     _list.length = value;
-    notifyListeners();
   }
 }

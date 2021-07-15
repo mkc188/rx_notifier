@@ -15,9 +15,6 @@ class RxSet<T> extends ChangeNotifier with SetMixin<T> {
   @override
   bool add(T value) {
     final result = _set.add(value);
-    if (result) {
-      notifyListeners();
-    }
     return result;
   }
 
@@ -46,9 +43,6 @@ class RxSet<T> extends ChangeNotifier with SetMixin<T> {
   @override
   bool remove(Object? value) {
     final result = _set.remove(value);
-    if (result) {
-      notifyListeners();
-    }
     return result;
   }
 

@@ -22,13 +22,11 @@ class RxMap<K, V> extends ChangeNotifier with MapMixin<K, V> {
   @override
   void operator []=(K key, V value) {
     _map[key] = value;
-    notifyListeners();
   }
 
   @override
   void clear() {
     _map.clear();
-    notifyListeners();
   }
 
   @override
@@ -40,9 +38,6 @@ class RxMap<K, V> extends ChangeNotifier with MapMixin<K, V> {
   @override
   V? remove(Object? key) {
     final result = _map.remove(key);
-    if (result != null) {
-      notifyListeners();
-    }
     return result;
   }
 }
