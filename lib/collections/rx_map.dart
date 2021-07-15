@@ -40,4 +40,8 @@ class RxMap<K, V> extends ChangeNotifier with MapMixin<K, V> {
     final result = _map.remove(key);
     return result;
   }
+
+  void notify() {
+    notifyListeners();
+  }
 }

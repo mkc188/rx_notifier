@@ -50,4 +50,8 @@ class RxSet<T> extends ChangeNotifier with SetMixin<T> {
   Set<T> toSet() {
     return this;
   }
+
+  void notify() {
+    notifyListeners();
+  }
 }

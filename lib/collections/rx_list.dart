@@ -172,4 +172,8 @@ class RxList<T> extends ChangeNotifier with ListMixin<T> {
   set length(int value) {
     _list.length = value;
   }
+
+  void notify() {
+    notifyListeners();
+  }
 }
