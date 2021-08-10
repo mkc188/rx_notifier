@@ -57,7 +57,7 @@ class _RxContext {
           orElse: () => '',
         );
 
-    debugPrintStack(stackTrace: StackTrace.fromString(stackFrame), label: '\u001b[31m' + 'No Rx variables in that space.');
+    debugPrintStack(stackTrace: StackTrace.fromString(stackFrame), label: 'No Rx variables in that space.');
     return null;
   }
 
